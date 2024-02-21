@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Continental University Registration Program</title>
+</head>
+
+<body>
+	<p id="studentType"></p>
+	<p id="residency"></p>
+	<p id="credits"></p>
+	<p id="registrationFee"></p>
+	<p id="tuitionRate"></p>
+	<p id="tuition"></p>
+	<p id="totalFee"></p>
+
+<script>
+
+let studentType, residency, credits;
+
+while (true) {
+    studentType = prompt("Student Type (B/M):", "");
+ 	
+	if (studentType && (studentType.toLowerCase() === 'b' || studentType.toLowerCase() === 'm')) {
+        residency = prompt("Residency (I/O):");
+
+        if (residency && (residency.toLowerCase() === 'i' || residency.toLowerCase() === 'o')) {
+            credits = prompt("Number of Credits Taking:");
+
+            if (credits && !isNaN(credits)) {
+                calculateFee();
+                break; // Exits the loop if all inputs are valid
+            } else {
+                alert("Invalid input for Number of Credits Taking. Please enter a valid number.");
+            }
+        } else {
+            alert("Invalid input for Residency. Please enter 'I' for In-state or 'O' for Out-state.");
+        }
+    } else {
+        alert("Invalid input for Student Type. Please enter 'B' for Bachelor or 'M' for Master.");
+    }
+}
+		
+function calculateFee() {
+
+			var registrationFee = 0;
+			var tuitionRate = 0;
+
+			if (studentType === "B" || studentType == "b") {
+				studentType = "Bachelor"
+				if (residency === "I" || residency === "i") {
+					residency = "In-state"
+					registrationFee = 200;
+					tuitionRate = 350;
+				} else {
+					residency = "Out-state"
+					registrationFee = 600;
+					tuitionRate = 700;
+				}
+			} else {
+				studentType = "Master"
+				if (residency === "I" || residency === "i") {
+					residency = "In-state"
+					registrationFee = 300;
+					tuitionRate = 450;
+				} else {
+					residency = "Out-state"
+					registrationFee = 900;
+					tuitionRate = 900;
+				}
+			}
+
+			var tuition = tuitionRate * credits;
+			var totalFee = registrationFee + tuition;
+			console.log(studentType, residency, credits, registrationFee, tuition, tuitionRate, totalFee)
+			document.getElementById("studentType").innerHTML = "Student type: " + studentType;
+			document.getElementById("residency").innerHTML = "Residency: " + residency;
+			document.getElementById("credits").innerHTML = "Credits Taking: " + credits;
+			document.getElementById("registrationFee").innerHTML = "Registration Fee ($): " + registrationFee;
+			document.getElementById("tuitionRate").innerHTML = "Tuition Rate ($/credit): " + tuitionRate;
+			document.getElementById("tuition").innerHTML = "Tuition ($): " + tuition;
+			document.getElementById("totalFee").innerHTML = "Total ($): " + totalFee;
+
+		}
+	
+	</script>
+
+</body>
+
+</html>
