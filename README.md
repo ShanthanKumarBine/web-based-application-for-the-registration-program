@@ -3,3 +3,7 @@ Implement a web-based application for the registration program of Continental Un
  
 
 The registration fee is $200 for in-state bachelor student, $600 for out-state bachelor student, $300 for in-state master student, and $900 for out-state master student. The tuition rate (per credit) is $350 for in-state bachelor student, $700 for out-state bachelor student, $450 for in-state master student, and $900 for out-state master student.
+
+UPDATED :
+
+Further enhanced the web-based application for the registration program of Continental University using HTML, CSS, and JavaScript. The application allows the user to enter data (student ID, name, type, residency, and number of credits taking) for a list of students. The user can also edit or delete an existing student.
