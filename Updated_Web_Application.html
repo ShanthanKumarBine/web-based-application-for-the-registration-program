@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <h1>Student Information</h1>
+    <form>
+        <label for="StudentID">Student ID: </label><input type="text" id="StudentID">
+        <br>
+        <label>Student Type: </label>
+        <label for="Bachelors">Bachelors </label>
+        <input type="radio" id="Bachelors" name="StudentType" value="Bachelors">
+        <label for="Masters">Masters</label>
+        <input type="radio" id="Masters" name="StudentType" value="Masters">
+        <br>
+        <label for="FirstName">First Name: </label><input type="text" id="FirstName">
+        <br>
+        <label for="LastName">Last Name: </label><input type="text" id="LastName">
+        <br>
+        <label>Residency: </label>
+        <label for="In-state">In-state </label>
+        <input type="radio" id="In-state" name="Residency" value="In-state">
+        <label for="Out-state">Out-state</label>
+        <input type="radio" id="Out-state" name="Residency" value="Out-state">
+        <br>
+        <label for="Number of Credits Taking">Number of Credits Taking: </label>
+        <input type="text" id="NumberofCreditsTaking">
+        <br>
+        <button type="button" onclick="saveStudent()" id="saveBtn">Save</button>
+        <button type="button" id="clearBtn" onclick="clearAllStudents()">Clear all students</button>
+    </form>
+    <div>
+        <h1>Students</h1>
+        <ul id="outputContainer"></ul>
+    </div>
+    <script type="text/javascript" src="Java.js"></script>
+</body>
+</html>
